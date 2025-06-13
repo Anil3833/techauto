@@ -1,0 +1,1832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.12.4 on win32)" generated="2025-06-13T15:45:03.870126" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Suite" source="c:\Users\HS021\SEB\techauto\test_suite.robot">
+<test id="s1-t1" name="TC0001 - Create, verify and remove accounts" line="12">
+<kw name="manage_browser" owner="test_setup" type="SETUP">
+<kw name="Open Browser" owner="Web">
+<msg time="2025-06-13T15:45:04.243565" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-13T15:45:04.243565" elapsed="2.158418"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Web">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-13T15:45:06.401983" elapsed="0.072041"/>
+</kw>
+<kw name="Set Selenium Speed" owner="Web">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-06-13T15:45:06.474024" elapsed="0.000000"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="Web">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-06-13T15:45:06.475038" elapsed="0.502072"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="Web">
+<arg>/path/to/screenshot/</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-06-13T15:45:06.977110" elapsed="0.001065"/>
+</kw>
+<kw name="Go To" owner="Web">
+<msg time="2025-06-13T15:45:06.978175" level="INFO">Opening url 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-13T15:45:06.978175" elapsed="1.343656"/>
+</kw>
+<arg>chrome</arg>
+<arg>${glob_sqa_url}</arg>
+<status status="PASS" start="2025-06-13T15:45:04.242559" elapsed="4.079272"/>
+</kw>
+<kw name="login_as_manager" owner="test_manager_steps">
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:08.324371" elapsed="0.523843"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:08.848214" elapsed="1.286382"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:08.324371" elapsed="1.810225"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:45:10.135719" level="INFO">Clicking element '//button[@ng-click="manager()"]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:10.134596" elapsed="1.090599"/>
+</kw>
+<arg>${mgr_selection_btn}</arg>
+<status status="PASS" start="2025-06-13T15:45:08.323356" elapsed="2.901839"/>
+</kw>
+<status status="PASS" start="2025-06-13T15:45:08.323356" elapsed="2.901839"/>
+</kw>
+<kw name="create_accounts" owner="test_manager_steps">
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:11.227278" elapsed="0.530502"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:11.762765" elapsed="6.513345"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:11.226277" elapsed="7.049833"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:45:18.277439" level="INFO">Clicking element '//button[@ng-click="addCust()"]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:18.276110" elapsed="1.090010"/>
+</kw>
+<arg>${mgr_add_cust_tab}</arg>
+<status status="PASS" start="2025-06-13T15:45:11.226277" elapsed="8.139843"/>
+</kw>
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-06-13T15:45:19.370130" level="INFO">${details} = [{'firstName': 'Christopher', 'lastName': 'Connely', 'postCode': 'L789C349'}, {'firstName': 'Frank', 'lastName': 'Christopher', 'postCode': 'A897N450'}, {'firstName': 'Christopher', 'lastName': 'Minka...</msg>
+<var>${details}</var>
+<arg>${acc_json}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-06-13T15:45:19.366120" elapsed="0.005012"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:45:19.371132" level="INFO">${fName} = Christopher</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:45:19.371132" elapsed="0.001514"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:45:19.372646" level="INFO">${lName} = Connely</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:45:19.372646" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:45:19.372646" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:45:19.372646" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:19.373686" elapsed="0.532286"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:19.905972" elapsed="4.726124"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:19.373686" elapsed="5.258410"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:45:24.633216" level="INFO">Typing text 'Christopher' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:24.632096" elapsed="1.708075"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:45:19.372646" elapsed="6.967525"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:26.341201" elapsed="0.523279"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:26.864480" elapsed="6.302652"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:26.341201" elapsed="6.825931"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:45:33.168246" level="INFO">Typing text 'Connely' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:33.167132" elapsed="1.656246"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:45:26.340171" elapsed="8.483207"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:34.823978" elapsed="0.552061"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:35.376039" elapsed="6.315043"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:34.823978" elapsed="6.867104"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:45:41.691082" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:41.691082" elapsed="1.631505"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:45:34.823978" elapsed="8.498609"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:43.323909" elapsed="0.531269"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:43.855178" elapsed="6.333006"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:43.323909" elapsed="6.864275"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:45:50.188184" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:50.188184" elapsed="1.178237"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:45:43.322587" elapsed="8.043834"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:45:51.367918" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:45:51.366421" elapsed="1.513149"/>
+</kw>
+<var name="${detail}">{'firstName': 'Christopher', 'lastName': 'Connely', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:45:19.371132" elapsed="33.508438"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:45:52.880579" level="INFO">${fName} = Frank</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:45:52.880579" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:45:52.881577" level="INFO">${lName} = Christopher</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:45:52.881577" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:45:52.882575" level="INFO">${pcode} = A897N450</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:45:52.882575" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:52.883629" elapsed="0.513172"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:53.396801" elapsed="3.217727"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:52.883107" elapsed="3.731421"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:45:56.615644" level="INFO">Typing text 'Frank' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:45:56.615644" elapsed="1.617258"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:45:52.883107" elapsed="5.350299"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:45:58.235301" elapsed="0.515318"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:45:58.750619" elapsed="6.304365"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:45:58.234291" elapsed="6.821722"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:46:05.057722" level="INFO">Typing text 'Christopher' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:05.057005" elapsed="1.703860"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:45:58.233406" elapsed="8.527459"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:06.762543" elapsed="0.511287"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:07.274334" elapsed="6.296945"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:06.762036" elapsed="6.809243"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:46:13.571279" level="INFO">Typing text 'A897N450' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:13.571279" elapsed="1.630905"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:46:06.760865" elapsed="8.441828"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:15.205779" elapsed="0.525049"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:15.731336" elapsed="6.301724"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:15.204776" elapsed="6.828284"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:46:22.033682" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:22.033682" elapsed="1.094804"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:46:15.203703" elapsed="7.924783"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:46:23.128486" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:46:23.128486" elapsed="1.508907"/>
+</kw>
+<var name="${detail}">{'firstName': 'Frank', 'lastName': 'Christopher', 'postCode': 'A897N450'}</var>
+<status status="PASS" start="2025-06-13T15:45:52.880579" elapsed="31.757319"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:46:24.638927" level="INFO">${fName} = Christopher</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:46:24.637898" elapsed="0.001029"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:46:24.638927" level="INFO">${lName} = Minka</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:46:24.638927" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:46:24.639929" level="INFO">${pcode} = M098Q585</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:46:24.638927" elapsed="0.001002"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:24.640925" elapsed="0.544410"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:25.186370" elapsed="3.213667"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:24.639929" elapsed="3.760720"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:46:28.401761" level="INFO">Typing text 'Christopher' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:28.400649" elapsed="1.695719"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:46:24.639929" elapsed="5.457957"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:30.098887" elapsed="0.538047"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:30.636934" elapsed="6.331186"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:30.098887" elapsed="6.869233"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:46:36.969194" level="INFO">Typing text 'Minka' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:36.968120" elapsed="1.641911"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:46:30.097886" elapsed="8.512145"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:38.612769" elapsed="0.524689"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:39.138468" elapsed="6.300418"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:38.612149" elapsed="6.826737"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:46:45.440183" level="INFO">Typing text 'M098Q585' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:45.438886" elapsed="1.615029"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:46:38.611158" elapsed="8.442757"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:47.054921" elapsed="0.520405"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:47.575954" elapsed="6.306057"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:47.054921" elapsed="6.827626"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:46:53.883619" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:46:53.883072" elapsed="1.100199"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:46:47.054921" elapsed="7.928948"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:46:54.984878" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:46:54.983869" elapsed="1.510589"/>
+</kw>
+<var name="${detail}">{'firstName': 'Christopher', 'lastName': 'Minka', 'postCode': 'M098Q585'}</var>
+<status status="PASS" start="2025-06-13T15:46:24.637898" elapsed="31.856560"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:46:56.495512" level="INFO">${fName} = Connely</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:46:56.495512" elapsed="0.001214"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:46:56.496726" level="INFO">${lName} = Jackson</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:46:56.496726" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:46:56.497726" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:46:56.496726" elapsed="0.001000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:46:56.498724" elapsed="0.539443"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:46:57.039181" elapsed="3.218955"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:46:56.497726" elapsed="3.760410"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:47:00.259147" level="INFO">Typing text 'Connely' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:00.259147" elapsed="1.627283"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:46:56.497726" elapsed="5.388704"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:01.888440" elapsed="0.514243"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:02.403190" elapsed="6.282146"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:01.888440" elapsed="6.796896"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:47:08.687343" level="INFO">Typing text 'Jackson' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:08.686342" elapsed="1.650090"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:47:01.887438" elapsed="8.449503"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:10.337952" elapsed="0.533280"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:10.871232" elapsed="6.303288"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:10.337952" elapsed="6.836568"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:47:17.176775" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:17.175888" elapsed="1.712988"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:47:10.336941" elapsed="8.551935"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:18.889897" elapsed="0.517922"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:19.408831" elapsed="6.289093"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:18.889897" elapsed="6.808565"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:47:25.699472" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:25.698462" elapsed="1.102214"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:47:18.888876" elapsed="7.911800"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:47:26.801705" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:47:26.801705" elapsed="1.511704"/>
+</kw>
+<var name="${detail}">{'firstName': 'Connely', 'lastName': 'Jackson', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:46:56.494969" elapsed="31.818440"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:47:28.314418" level="INFO">${fName} = Jackson</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:47:28.314418" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:47:28.315427" level="INFO">${lName} = Frank</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:47:28.315427" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:47:28.315427" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:47:28.315427" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:28.316424" elapsed="0.524177"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:28.841106" elapsed="3.220701"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:28.316424" elapsed="3.745383"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:47:32.062821" level="INFO">Typing text 'Jackson' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:32.061807" elapsed="1.612570"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:47:28.316424" elapsed="5.357953"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:33.675729" elapsed="0.511639"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:34.187908" elapsed="6.306288"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:33.675729" elapsed="6.818467"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:47:40.495205" level="INFO">Typing text 'Frank' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:40.494196" elapsed="1.660132"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:47:33.675194" elapsed="8.479134"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:42.155452" elapsed="0.530792"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:42.686777" elapsed="6.311906"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:42.155452" elapsed="6.843231"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:47:48.999699" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:48.999699" elapsed="1.650544"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:47:42.154328" elapsed="8.496932"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:47:50.652769" elapsed="0.529733"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:47:51.183571" elapsed="6.322493"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:47:50.652769" elapsed="6.853295"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:47:57.508073" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:47:57.507075" elapsed="1.098292"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:47:50.651260" elapsed="7.954107"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:47:58.606342" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:47:58.606342" elapsed="1.506842"/>
+</kw>
+<var name="${detail}">{'firstName': 'Jackson', 'lastName': 'Frank', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:47:28.314418" elapsed="31.798766"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:48:00.113703" level="INFO">${fName} = Minka</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:48:00.113703" elapsed="0.001011"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:48:00.114714" level="INFO">${lName} = Jackson</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:48:00.114714" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:48:00.115742" level="INFO">${pcode} = A897N450</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:48:00.114714" elapsed="0.001028"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:00.116713" elapsed="0.522165"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:00.638878" elapsed="3.238496"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:00.116713" elapsed="3.761167"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:48:03.877880" level="INFO">Typing text 'Minka' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:03.877880" elapsed="1.636807"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:48:00.115742" elapsed="5.398945"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:05.516505" elapsed="0.514399"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:06.031412" elapsed="6.306856"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:05.515993" elapsed="6.822275"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:48:12.339294" level="INFO">Typing text 'Jackson' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:12.339294" elapsed="1.718905"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:48:05.514687" elapsed="8.543512"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:14.059220" elapsed="0.517089"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:14.576309" elapsed="6.308484"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:14.059220" elapsed="6.826221"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:48:20.885441" level="INFO">Typing text 'A897N450' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:20.885441" elapsed="1.657110"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:48:14.058199" elapsed="8.484910"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:22.544635" elapsed="0.531547"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:23.076182" elapsed="6.319816"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:22.543629" elapsed="6.852369"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:48:29.396508" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:29.396508" elapsed="1.077473"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:48:22.543109" elapsed="7.930872"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:48:30.473981" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:48:30.473981" elapsed="1.509480"/>
+</kw>
+<var name="${detail}">{'firstName': 'Minka', 'lastName': 'Jackson', 'postCode': 'A897N450'}</var>
+<status status="PASS" start="2025-06-13T15:48:00.113703" elapsed="31.869758"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:48:31.984470" level="INFO">${fName} = Jackson</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:48:31.984470" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:48:31.985469" level="INFO">${lName} = Connely</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:48:31.984470" elapsed="0.001999"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:48:31.987467" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:48:31.987467" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:31.988563" elapsed="0.516422"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:32.504985" elapsed="4.759870"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:31.988563" elapsed="5.276292"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:48:37.265688" level="INFO">Typing text 'Jackson' into text field '//input[@type="text"][@ng-model="fName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:37.264855" elapsed="1.609431"/>
+</kw>
+<arg>${mgr_fname_txtbox}</arg>
+<arg>${fName}</arg>
+<status status="PASS" start="2025-06-13T15:48:31.987467" elapsed="6.886819"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:38.876297" elapsed="0.511108"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:39.388432" elapsed="6.297967"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:38.875292" elapsed="6.811613"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:48:45.687912" level="INFO">Typing text 'Connely' into text field '//input[@type="text"][@ng-model="lName"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:45.686905" elapsed="1.686896"/>
+</kw>
+<arg>${mgr_lname_txtbox}</arg>
+<arg>${lName}</arg>
+<status status="PASS" start="2025-06-13T15:48:38.875292" elapsed="8.498509"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:47.374911" elapsed="0.529483"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:47.904394" elapsed="6.327576"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:47.374911" elapsed="6.857059"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:48:54.232984" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"][@ng-model="postCd"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:48:54.231970" elapsed="1.616583"/>
+</kw>
+<arg>${mgr_postcd_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:48:47.374911" elapsed="8.473642"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:48:55.849596" elapsed="0.518033"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:48:56.367629" elapsed="6.309604"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:48:55.849596" elapsed="6.827637"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:49:02.678245" level="INFO">Clicking element '//button[@type="submit"][contains(text(),"Add Customer")]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:02.678245" elapsed="1.090928"/>
+</kw>
+<arg>${mgr_add_cust_btn}</arg>
+<status status="PASS" start="2025-06-13T15:48:55.848553" elapsed="7.920620"/>
+</kw>
+<kw name="Handle Alert" owner="Web">
+<msg time="2025-06-13T15:49:03.769678" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-06-13T15:49:03.769678" elapsed="1.507837"/>
+</kw>
+<var name="${detail}">{'firstName': 'Jackson', 'lastName': 'Connely', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:48:31.983461" elapsed="33.294054"/>
+</iter>
+<var>${detail}</var>
+<value>@{details}</value>
+<status status="PASS" start="2025-06-13T15:45:19.371132" elapsed="225.906383"/>
+</for>
+<status status="PASS" start="2025-06-13T15:45:11.226277" elapsed="234.051238"/>
+</kw>
+<kw name="verify_added_customers" owner="test_manager_steps">
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:05.279528" elapsed="0.539292"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:05.818820" elapsed="3.220756"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:05.279528" elapsed="3.760048"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:49:09.040608" level="INFO">Clicking element '//button[@ng-click="showCust()"]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:09.040608" elapsed="1.093618"/>
+</kw>
+<arg>${mgr_cust_tab}</arg>
+<status status="PASS" start="2025-06-13T15:49:05.278529" elapsed="4.855697"/>
+</kw>
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-06-13T15:49:10.137498" level="INFO">${details} = [{'firstName': 'Christopher', 'lastName': 'Connely', 'postCode': 'L789C349'}, {'firstName': 'Frank', 'lastName': 'Christopher', 'postCode': 'A897N450'}, {'firstName': 'Christopher', 'lastName': 'Minka...</msg>
+<var>${details}</var>
+<arg>${acc_json}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-06-13T15:49:10.134983" elapsed="0.002515"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:10.139507" level="INFO">${fName} = Christopher</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:10.139507" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:10.141514" level="INFO">${lName} = Connely</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:10.140507" elapsed="0.001007"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:10.143134" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:10.141514" elapsed="0.003068"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:10.144582" elapsed="0.521682"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:10.666264" elapsed="4.742723"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:10.144582" elapsed="5.264405"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:49:15.410050" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:15.408987" elapsed="1.654558"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:49:10.144582" elapsed="6.918963"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:49:17.065554" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Christopher"] and td[2][normalize-space(text())="Connely"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:49:17.064555" elapsed="0.000999"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:49:18.231912" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Christopher"] and td[2][normalize-space(text())="Connely"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:49:17.066561" elapsed="1.165351"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:49:17.065554" elapsed="1.167389"/>
+</kw>
+<var name="${detail}">{'firstName': 'Christopher', 'lastName': 'Connely', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:49:10.138515" elapsed="8.094935"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:18.234456" level="INFO">${fName} = Frank</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:18.233450" elapsed="0.001006"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:18.235456" level="INFO">${lName} = Christopher</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:18.234456" elapsed="0.001000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:18.235456" level="INFO">${pcode} = A897N450</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:18.235456" elapsed="0.001000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:18.238011" elapsed="0.511818"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:18.750454" elapsed="6.311121"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:18.238011" elapsed="6.824070"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:49:25.062587" level="INFO">Typing text 'A897N450' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:25.062081" elapsed="1.713840"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:49:18.236456" elapsed="8.539465"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:49:26.777439" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Frank"] and td[2][normalize-space(text())="Christopher"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:49:26.777439" elapsed="0.000000"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:49:27.821851" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Frank"] and td[2][normalize-space(text())="Christopher"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:49:26.778452" elapsed="1.043934"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:49:26.778452" elapsed="1.044549"/>
+</kw>
+<var name="${detail}">{'firstName': 'Frank', 'lastName': 'Christopher', 'postCode': 'A897N450'}</var>
+<status status="PASS" start="2025-06-13T15:49:18.233450" elapsed="9.589551"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:27.824960" level="INFO">${fName} = Christopher</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:27.824648" elapsed="0.001056"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:27.826286" level="INFO">${lName} = Minka</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:27.825704" elapsed="0.000582"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:27.827406" level="INFO">${pcode} = M098Q585</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:27.827406" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:27.830355" elapsed="0.544918"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:28.376284" elapsed="6.326373"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:27.830355" elapsed="6.872302"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:49:34.703666" level="INFO">Typing text 'M098Q585' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:34.702657" elapsed="1.619972"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:49:27.829225" elapsed="8.493404"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:49:36.322629" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Christopher"] and td[2][normalize-space(text())="Minka"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:49:36.322629" elapsed="0.000000"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:49:37.355244" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Christopher"] and td[2][normalize-space(text())="Minka"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:49:36.323646" elapsed="1.031598"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:49:36.322629" elapsed="1.034616"/>
+</kw>
+<var name="${detail}">{'firstName': 'Christopher', 'lastName': 'Minka', 'postCode': 'M098Q585'}</var>
+<status status="PASS" start="2025-06-13T15:49:27.823631" elapsed="9.534625"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:37.359257" level="INFO">${fName} = Connely</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:37.358256" elapsed="0.001001"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:37.359257" level="INFO">${lName} = Jackson</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:37.359257" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:37.362763" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:37.361256" elapsed="0.001507"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:37.362763" elapsed="0.515742"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:37.878505" elapsed="6.301887"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:37.362763" elapsed="6.818178"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:49:44.180941" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:44.180941" elapsed="1.622692"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:49:37.362763" elapsed="8.440870"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:49:45.805643" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Connely"] and td[2][normalize-space(text())="Jackson"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:49:45.804707" elapsed="0.000936"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:49:46.852167" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Connely"] and td[2][normalize-space(text())="Jackson"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:49:45.805643" elapsed="1.048016"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:49:45.805643" elapsed="1.048016"/>
+</kw>
+<var name="${detail}">{'firstName': 'Connely', 'lastName': 'Jackson', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:49:37.358256" elapsed="9.496522"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:46.856784" level="INFO">${fName} = Jackson</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:46.855685" elapsed="0.001099"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:46.858682" level="INFO">${lName} = Frank</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:46.857659" elapsed="0.002118"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:46.860785" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:46.859777" elapsed="0.001008"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:46.862777" elapsed="0.559011"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:47.422339" elapsed="6.319148"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:46.861778" elapsed="6.880215"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:49:53.741993" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:49:53.741993" elapsed="1.638142"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:49:46.861778" elapsed="8.518969"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:49:55.381748" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Jackson"] and td[2][normalize-space(text())="Frank"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:49:55.380747" elapsed="0.001001"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:49:56.422340" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Jackson"] and td[2][normalize-space(text())="Frank"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:49:55.382748" elapsed="1.040121"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:49:55.381748" elapsed="1.041121"/>
+</kw>
+<var name="${detail}">{'firstName': 'Jackson', 'lastName': 'Frank', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:49:46.854778" elapsed="9.568091"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:56.423400" level="INFO">${fName} = Minka</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:56.423400" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:56.424426" level="INFO">${lName} = Jackson</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:56.423400" elapsed="0.001026"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:49:56.424426" level="INFO">${pcode} = A897N450</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:49:56.424426" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:49:56.425932" elapsed="0.510455"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:49:56.936892" elapsed="6.294114"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:49:56.425932" elapsed="6.806105"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:50:03.233791" level="INFO">Typing text 'A897N450' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:50:03.233130" elapsed="1.649905"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:49:56.424426" elapsed="8.459162"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:50:04.883588" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Minka"] and td[2][normalize-space(text())="Jackson"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:50:04.883588" elapsed="0.000000"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:50:05.929254" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Minka"] and td[2][normalize-space(text())="Jackson"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:50:04.884593" elapsed="1.044661"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:50:04.883588" elapsed="1.045666"/>
+</kw>
+<var name="${detail}">{'firstName': 'Minka', 'lastName': 'Jackson', 'postCode': 'A897N450'}</var>
+<status status="PASS" start="2025-06-13T15:49:56.422869" elapsed="9.506385"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:50:05.930270" level="INFO">${fName} = Jackson</msg>
+<var>${fName}</var>
+<arg>${detail}</arg>
+<arg>firstName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:50:05.930270" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:50:05.931265" level="INFO">${lName} = Connely</msg>
+<var>${lName}</var>
+<arg>${detail}</arg>
+<arg>lastName</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:50:05.931265" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-13T15:50:05.931265" level="INFO">${pcode} = L789C349</msg>
+<var>${pcode}</var>
+<arg>${detail}</arg>
+<arg>postCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-13T15:50:05.931265" elapsed="0.000000"/>
+</kw>
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:50:05.932611" elapsed="0.537031"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:50:06.469642" elapsed="6.296824"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:50:05.932611" elapsed="6.833855"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:50:12.766466" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:50:12.766466" elapsed="2.299970"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:50:05.932611" elapsed="9.134331"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:50:15.066942" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Jackson"] and td[2][normalize-space(text())="Connely"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${fName}"] and td[2][normalize-space(text())="${lName}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:50:15.066942" elapsed="0.000000"/>
+</kw>
+<kw name="ele_should_be_visible" owner="test_keywords">
+<kw name="Element Should Be Visible" owner="Web">
+<msg time="2025-06-13T15:50:16.110421" level="INFO">Element 'xpath=//tr[td[1][normalize-space(text())="Jackson"] and td[2][normalize-space(text())="Connely"]]//button[text()="Delete"]' is displayed.</msg>
+<arg>${ele}</arg>
+<arg>message=Element="${ele}" is not visible</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-13T15:50:15.066942" elapsed="1.043479"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:50:15.066942" elapsed="1.043479"/>
+</kw>
+<var name="${detail}">{'firstName': 'Jackson', 'lastName': 'Connely', 'postCode': 'L789C349'}</var>
+<status status="PASS" start="2025-06-13T15:50:05.930270" elapsed="10.181257"/>
+</iter>
+<var>${detail}</var>
+<value>@{details}</value>
+<status status="PASS" start="2025-06-13T15:49:10.137498" elapsed="65.974029"/>
+</for>
+<status status="PASS" start="2025-06-13T15:49:05.278529" elapsed="70.833687"/>
+</kw>
+<kw name="remove_customer_from_table" owner="test_manager_steps">
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:50:16.114284" elapsed="0.527921"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:50:16.642842" elapsed="6.310059"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:50:16.114284" elapsed="6.839168"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:50:22.953452" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:50:22.953452" elapsed="1.774426"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:50:16.112754" elapsed="8.615124"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:50:24.729943" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Jackson"] and td[2][normalize-space(text())="Frank"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${first_name}"] and td[2][normalize-space(text())="${last_name}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:50:24.728941" elapsed="0.001960"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:50:24.735457" elapsed="0.518060"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:50:25.253517" elapsed="6.315979"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:50:24.733429" elapsed="6.836574"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:50:31.570003" level="INFO">Clicking element 'xpath=//tr[td[1][normalize-space(text())="Jackson"] and td[2][normalize-space(text())="Frank"]]//button[text()="Delete"]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:50:31.570003" elapsed="1.152582"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:50:24.731902" elapsed="7.990683"/>
+</kw>
+<arg>Jackson</arg>
+<arg>Frank</arg>
+<arg>L789C349</arg>
+<status status="PASS" start="2025-06-13T15:50:16.112754" elapsed="16.609831"/>
+</kw>
+<kw name="remove_customer_from_table" owner="test_manager_steps">
+<kw name="key_in" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:50:32.731148" elapsed="0.541485"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:50:33.272633" elapsed="4.708931"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:50:32.728147" elapsed="5.253985"/>
+</kw>
+<kw name="Input Text" owner="Web">
+<msg time="2025-06-13T15:50:37.982675" level="INFO">Typing text 'L789C349' into text field '//input[@type="text"]'.</msg>
+<arg>${ele}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:50:37.982132" elapsed="1.715856"/>
+</kw>
+<arg>${mgr_cust_search_txtbox}</arg>
+<arg>${pcode}</arg>
+<status status="PASS" start="2025-06-13T15:50:32.725983" elapsed="6.972518"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-13T15:50:39.700013" level="INFO">${xpath} = xpath=//tr[td[1][normalize-space(text())="Christopher"] and td[2][normalize-space(text())="Connely"]]//button[text()="Delete"]</msg>
+<var>${xpath}</var>
+<arg>xpath=//tr[td[1][normalize-space(text())="${first_name}"] and td[2][normalize-space(text())="${last_name}"]]//button[text()="Delete"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-13T15:50:39.698501" elapsed="0.001512"/>
+</kw>
+<kw name="click_ele" owner="test_keywords">
+<kw name="manage_normal_ele" owner="test_keywords">
+<kw name="Wait Until Page Contains Element" owner="Web">
+<arg>${ele}</arg>
+<arg>timeout=5s</arg>
+<arg>error= Page does not contain this "${ele}" element.</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-13T15:50:39.701029" elapsed="0.511404"/>
+</kw>
+<kw name="Scroll Element Into View" owner="Web">
+<arg>${ele}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-06-13T15:50:40.212979" elapsed="6.311123"/>
+</kw>
+<arg>${ele}</arg>
+<status status="PASS" start="2025-06-13T15:50:39.700013" elapsed="6.824089"/>
+</kw>
+<kw name="Click Element" owner="Web">
+<msg time="2025-06-13T15:50:46.524102" level="INFO">Clicking element 'xpath=//tr[td[1][normalize-space(text())="Christopher"] and td[2][normalize-space(text())="Connely"]]//button[text()="Delete"]'.</msg>
+<arg>${ele}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-13T15:50:46.524102" elapsed="1.080996"/>
+</kw>
+<arg>${xpath}</arg>
+<status status="PASS" start="2025-06-13T15:50:39.700013" elapsed="7.905085"/>
+</kw>
+<arg>Christopher</arg>
+<arg>Connely</arg>
+<arg>L789C349</arg>
+<status status="PASS" start="2025-06-13T15:50:32.724109" elapsed="14.880989"/>
+</kw>
+<kw name="Close Browser" owner="Web" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-13T15:50:47.606143" elapsed="2.652514"/>
+</kw>
+<status status="PASS" start="2025-06-13T15:45:04.241042" elapsed="346.018555"/>
+</test>
+<status status="PASS" start="2025-06-13T15:45:03.874184" elapsed="346.386398"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Suite" id="s1" pass="1" fail="0" skip="0">Test Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
